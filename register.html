@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Patient Registration | QiBalance</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+    
+    <style>
+        /* =========================================
+           CORE STYLES & VARIABLES (QIBALANCE THEME)
+           ========================================= */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        /* STRICT NO SCROLL LOCK */
+        html, body { 
+            height: 100vh !important; 
+            width: 100vw !important;
+            overflow: hidden !important; 
+            font-family: 'Inter', sans-serif; 
+            margin: 0;
+            padding: 0;
+        }
+
+        .brand-font { font-family: 'Playfair Display', serif; }
+
+        /* === QiBalance THEME VARIABLES (Earthy & Serene) === */
+        :root {
+            /* Backgrounds */
+            --bg-color: #FAFAF9; /* Warm stone 50 */
+            --bg-secondary: #F5F5F4; /* Warm stone 100 */
+            
+            /* Card & Text */
+            --bg-card: #FFFFFF; 
+            --card-border: #E7E5E4; /* Stone 200 */
+            --text-main: #292524; /* Stone 800 */
+            --text-muted: #57534E; /* Stone 500 */
+            
+            /* Inputs */
+            --input-bg: rgba(107, 112, 92, 0.04);
+            --input-border: #E7E5E4;
+            --input-focus-bg: #FFFFFF;
+            --input-text: #292524;
+            
+            /* Top Controls */
+            --page-text: #57534E; 
+            --toggle-bg: #F5F5F4; 
+            
+            /* Accents & Buttons */
+            --accent-color: #6B705C; /* Sage/Olive Green */
+            --accent-dark: #414833; /* Deep Olive */
+            --btn-text: #FFFFFF;
+            
+            --radius: 16px; 
+            --shadow: 0 25px 50px -12px rgba(107, 112, 92, 0.15);
+            --btn-shadow: 0 4px 14px 0 rgba(107, 112, 92, 0.25);
+            --btn-shadow-hover: 0 8px 24px -4px rgba(107, 112, 92, 0.5);
+        }
+
+        /* DARK MODE */
+        body.dark-mode {
+            --bg-color: #1C1917; /* Stone 900 */
+            --bg-secondary: #292524; /* Stone 800 */
+            
+            --bg-card: #221F1E; /* Dark Card */
+            --card-border: #44403C; /* Stone 700 */
+            --text-main: #F5F5F4; /* Warm stone 100 */
+            --text-muted: #A8A29E; /* Stone 400 */
+            
+            --input-bg: rgba(163, 177, 138, 0.05);
+            --input-border: #44403C;
+            --input-focus-bg: #221F1E;
+            --input-text: #F5F5F4;
+            
+            --page-text: #F5F5F4; 
+            --toggle-bg: #292524; 
+            
+            --accent-color: #A3B18A; /* Light Sage */
+            --accent-dark: #DAD7CD; /* Pale Sand */
+            --btn-text: #292524; 
+
+            --shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+            --btn-shadow: 0 4px 14px 0 rgba(163, 177, 138, 0.2);
+            --btn-shadow-hover: 0 8px 24px -4px rgba(163, 177, 138, 0.5);
+        }
+
+        body { 
+            background-color: var(--bg-color);
+            background-image: radial-gradient(circle at 100% 0%, var(--bg-secondary) 0%, transparent 50%), 
+                              radial-gradient(circle at 0% 100%, var(--bg-secondary) 0%, transparent 50%);
+            transition: background-color 0.5s ease;
+            display: flex;
+            flex-direction: column; 
+            position: relative;
+        }
+
+        /* RTL SUPPORT */
+        [dir="rtl"] { text-align: right; }
+        [dir="rtl"] .ml-2 { margin-left: 0; margin-right: 0.5rem; }
+        [dir="rtl"] .mr-2 { margin-left: 0.5rem; margin-right: 0; }
+        [dir="rtl"] .btn-icon { margin-left: 0; margin-right: 8px; transform: rotate(180deg); }
+        [dir="rtl"] .input-label { left: auto; right: 16px; }
+        [dir="rtl"] .password-toggle { right: auto; left: 16px; }
+
+        /* =========================================
+           TOP CONTROLS BAR
+           ========================================= */
+        .top-bar {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end; 
+            align-items: center;
+            padding: 1rem 1.5rem;
+            gap: 1.5rem;
+            z-index: 50;
+            flex-shrink: 0;
+        }
+
+        .toggle { 
+            width: 44px; height: 26px; 
+            background: var(--toggle-bg); 
+            border: 1px solid var(--card-border);
+            border-radius: 50px; position: relative; cursor: pointer; transition: 0.3s; 
+            flex-shrink: 0;
+        }
+        .toggle::before { 
+            content: ''; position: absolute; width: 20px; height: 20px; 
+            background: white; border-radius: 50%; top: 2px; left: 3px; 
+            transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+        }
+        body.dark-mode .toggle::before { left: 19px; background: var(--accent-dark); box-shadow: none; }
+        
+        .top-btn-text { 
+            font-size: 0.7rem; font-weight: 800; color: var(--page-text); 
+            background: var(--bg-card); border: 2px solid var(--card-border); 
+            padding: 8px 16px; border-radius: 8px; cursor: pointer; transition: 0.3s; 
+            text-transform: uppercase; letter-spacing: 1px; 
+        }
+        .top-btn-text:hover { border-color: var(--accent-color); color: var(--accent-color); }
+
+        /* MAIN WRAPPER */
+        .main-wrapper {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 1rem;
+            z-index: 10;
+        }
+
+        /* REGISTER CARD */
+        .register-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius);
+            padding: clamp(1.5rem, 4vh, 2.5rem) clamp(1.5rem, 4vw, 2.5rem);
+            width: 100%;
+            max-width: 460px;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            gap: 20px; 
+            position: relative;
+            overflow: hidden; 
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* Decorative top accent line */
+        .register-card::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px;
+            background: linear-gradient(90deg, var(--accent-color), var(--accent-dark));
+        }
+
+        /* HEADERS */
+        .auth-logo { display: flex; justify-content: center; margin-bottom: 4px; }
+        .auth-header { text-align: center; }
+        .auth-header h2 { font-size: clamp(1.3rem, 3vh, 1.6rem); font-weight: 800; color: var(--text-main); margin-bottom: 6px; letter-spacing: -0.5px; }
+        .auth-header p { font-size: 0.85rem; color: var(--text-muted); margin: 0; font-weight: 400; }
+
+        /* FORM */
+        form { display: flex; flex-direction: column; gap: 16px; margin: 0; }
+
+        /* FLOATING LABEL INPUT DESIGN */
+        .input-wrapper { position: relative; width: 100%; }
+        
+        .input-field {
+            width: 100%;
+            padding: 22px 16px 6px 16px; 
+            background-color: var(--input-bg);
+            color: var(--input-text);
+            border: 1px solid transparent;
+            border-bottom: 2px solid var(--input-border);
+            border-radius: 8px 8px 0 0;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin: 0;
+        }
+        
+        .input-label {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            transition: all 0.25s ease;
+            pointer-events: none;
+            opacity: 0.8;
+        }
+
+        .input-field:focus ~ .input-label,
+        .input-field:not(:placeholder-shown) ~ .input-label {
+            top: 12px;
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--accent-color);
+            opacity: 1;
+        }
+
+        .input-field:focus { 
+            outline: none; 
+            border-bottom-color: var(--accent-color); 
+            background-color: var(--input-focus-bg);
+        }
+
+        /* Password Field Specifics */
+        .password-field { padding-right: 48px !important; }
+        .password-toggle {
+            position: absolute; right: 12px; top: 50%; transform: translateY(-50%);
+            color: var(--text-muted); background: none; border: none; cursor: pointer;
+            padding: 4px; transition: color 0.3s; font-size: 1rem; z-index: 5;
+        }
+        .password-toggle:hover, .password-toggle:focus { color: var(--accent-color); outline: none; }
+
+        /* Checkbox Row */
+        .utility-row {
+            display: flex; align-items: center;
+            margin: 0; padding: 4px 4px 0 4px;
+        }
+
+        .custom-checkbox { display: flex; align-items: flex-start; cursor: pointer; position: relative; gap: 10px;}
+        .custom-checkbox input { position: absolute; opacity: 0; cursor: pointer; height: 0; width: 0; }
+        .checkmark {
+            flex-shrink: 0;
+            height: 18px; width: 18px; background-color: var(--input-bg);
+            border: 2px solid var(--input-border); border-radius: 4px;
+            display: flex; align-items: center; justify-content: center;
+            transition: all 0.2s ease;
+            margin-top: 1px;
+        }
+        .custom-checkbox input:checked ~ .checkmark { background-color: var(--accent-color); border-color: var(--accent-color); }
+        .custom-checkbox input:checked ~ .checkmark::after { content: '\f00c'; font-family: 'Font Awesome 6 Free'; font-weight: 900; color: var(--btn-text); font-size: 10px; }
+
+        /* Gradient Submit Button */
+        .auth-btn {
+            width: 100%; 
+            padding: 14px;
+            background: linear-gradient(135deg, var(--accent-color), var(--accent-dark));
+            color: var(--btn-text); 
+            border: none;
+            border-radius: 8px; 
+            font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+            cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            margin-top: 4px; 
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: var(--btn-shadow);
+        }
+        body.dark-mode .auth-btn { background: var(--accent-color); }
+        .auth-btn:hover { 
+            transform: translateY(-2px); 
+            box-shadow: var(--btn-shadow-hover); 
+            filter: brightness(1.1);
+        }
+
+        /* MODERN DIVIDER */
+        .divider { display: flex; align-items: center; text-align: center; margin: 2px 0; }
+        .divider::before, .divider::after { content: ''; flex: 1; border-bottom: 1px solid var(--card-border); }
+        .divider span { padding: 0 16px; color: var(--text-muted); font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;}
+
+        /* AUTH PROVIDERS */
+        .auth-providers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+        .provider-btn {
+            width: 100%; height: 44px;
+            border: 1px solid var(--input-border); border-radius: 8px; 
+            background-color: var(--input-bg);
+            font-size: 1.1rem; color: var(--text-main);
+            cursor: pointer; transition: all 0.3s ease;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .provider-btn:hover { 
+            background-color: var(--accent-color); border-color: var(--accent-color);
+            color: var(--bg-card); transform: translateY(-2px); box-shadow: var(--btn-shadow-hover);
+        }
+
+        /* FOOTER LINKS */
+        .login-link { text-align: center; font-size: 0.85rem; color: var(--text-muted); font-weight: 400; margin-top: 4px; }
+        .login-link a { color: var(--accent-color); font-weight: 700; text-decoration: none; transition: all 0.2s; border-bottom: 1px solid transparent; }
+        .login-link a:hover { border-bottom-color: var(--accent-color); }
+
+        /* Logo specifics to match original logic and stay black in light mode */
+        body:not(.dark-mode) .auth-logo a {
+            color: #000000 !important;
+        }
+        body.dark-mode .auth-logo a {
+            color: var(--text-main) !important;
+        }
+
+        /* =========================================
+           MOBILE OPTIMIZATIONS 
+           ========================================= */
+        @media (max-width: 450px), (max-height: 750px) {
+            .top-bar { padding: 0.8rem 1rem; }
+            .register-card { padding: 1.5rem !important; gap: 16px; width: 92%; border-radius: 12px; }
+            .auth-header h2 { font-size: 1.4rem !important; margin-bottom: 2px !important; }
+            form { gap: 12px; }
+            .input-field { padding: 20px 14px 6px 14px !important; font-size: 0.85rem !important; }
+            .input-label { left: 14px !important; font-size: 0.85rem !important; }
+            .input-field:focus ~ .input-label, .input-field:not(:placeholder-shown) ~ .input-label { top: 11px; font-size: 0.6rem; }
+            .auth-btn { padding: 12px !important; font-size: 0.85rem !important; }
+            .provider-btn { height: 40px !important; font-size: 1rem !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="flex items-center gap-2" style="cursor: pointer;" onclick="document.getElementById('theme-toggle').click()">
+            <i class="fas fa-sun text-xs" style="color: var(--page-text); transition: color 0.3s;"></i>
+            <div class="toggle" id="theme-toggle"></div>
+            <i class="fas fa-moon text-xs" style="color: var(--page-text); transition: color 0.3s;"></i>
+        </div>
+        <button id="rtl-toggle" class="top-btn-text">RTL Mode</button>
+    </div>
+
+    <div class="main-wrapper">
+        <div class="register-card">
+
+            <div class="auth-logo">
+                <a href="index.html" class="brand-font text-2xl lg:text-3xl font-bold tracking-tight" style="text-decoration: none;">QiBalance</a>
+            </div>
+
+            <div class="auth-header">
+                <h2>Create an Account</h2>
+                
+            </div>
+
+            <form id="register-form">
+                
+                <div class="input-wrapper">
+                    <input type="text" id="fname" class="input-field" placeholder=" " required>
+                    <label for="fname" class="input-label">First Name</label>
+                </div>
+                
+                <div class="input-wrapper">
+                    <input type="text" id="lname" class="input-field" placeholder=" " required>
+                    <label for="lname" class="input-label">Last Name</label>
+                </div>
+
+                <div class="input-wrapper">
+                    <input type="email" id="email" class="input-field" placeholder=" " required>
+                    <label for="email" class="input-label">Email Address</label>
+                </div>
+
+                <div class="input-wrapper">
+                    <input type="password" id="password" class="input-field password-field" placeholder=" " required>
+                    <label for="password" class="input-label">Create Password</label>
+                    <button type="button" class="password-toggle" id="toggle-password" tabindex="-1" aria-label="Toggle password visibility">
+                        <i class="fas fa-eye" id="toggle-icon"></i>
+                    </button>
+                </div>
+
+                <div class="utility-row">
+                    <label class="custom-checkbox">
+                        <input type="checkbox" required>
+                        <div class="checkmark"></div>
+                        <span class="text-[0.8rem] font-medium leading-tight" style="color: var(--text-muted);">
+                            I agree to the <a href="#" style="color: var(--accent-color); text-decoration: underline;">Terms</a> & <a href="#" style="color: var(--accent-color); text-decoration: underline;">Privacy Policy</a>
+                        </span>
+                    </label>
+                </div>
+
+                <button type="submit" class="auth-btn">Register <i class="fas fa-user-plus ml-2"></i></button>
+            </form>
+
+            <div class="divider"><span>Or sign up with</span></div>
+
+            <div class="auth-providers">
+                <button class="provider-btn" type="button" title="Sign up with Google"><i class="fa-brands fa-google"></i></button>
+                <button class="provider-btn" type="button" title="Sign up with Apple"><i class="fa-brands fa-apple"></i></button>
+                <button class="provider-btn" type="button" title="Sign up with X"><i class="fa-brands fa-x-twitter"></i></button>
+            </div>
+
+            <div class="login-link">
+                Already have an account? <a href="login.html">Sign In Here</a>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        // --- THEME LOGIC ---
+        const themeToggle = document.getElementById('theme-toggle');
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        
+        if (savedTheme === 'dark') {
+            document.body.classList.add('dark-mode');
+            themeToggle.classList.add('active');
+        }
+
+        themeToggle.onclick = (e) => {
+            e.stopPropagation(); 
+            document.body.classList.toggle('dark-mode');
+            const isDark = document.body.classList.contains('dark-mode');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            themeToggle.classList.toggle('active', isDark);
+        };
+
+        // --- RTL LOGIC ---
+        const rtlToggle = document.getElementById('rtl-toggle');
+        const savedDir = localStorage.getItem('dir') || 'ltr';
+        
+        if (savedDir === 'rtl') {
+            document.documentElement.dir = 'rtl';
+            rtlToggle.innerText = "LTR MODE";
+        }
+
+        rtlToggle.onclick = () => {
+            const isRTL = document.documentElement.dir === 'rtl';
+            document.documentElement.dir = isRTL ? 'ltr' : 'rtl';
+            localStorage.setItem('dir', isRTL ? 'ltr' : 'rtl');
+            rtlToggle.innerText = isRTL ? 'RTL MODE' : 'LTR MODE';
+        };
+
+        // --- PASSWORD TOGGLE LOGIC ---
+        const togglePasswordBtn = document.getElementById('toggle-password');
+        const passwordInput = document.getElementById('password');
+        const toggleIcon = document.getElementById('toggle-icon');
+
+        togglePasswordBtn.addEventListener('click', () => {
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+            toggleIcon.className = type === 'password' ? 'fas fa-eye' : 'fas fa-eye-slash';
+        });
+
+        // --- FORM SUBMISSION ---
+        document.getElementById('register-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Redirecting to login upon successful registration
+            window.location.href = 'login.html'; 
+        });
+    </script>
+</body>
+</html>
