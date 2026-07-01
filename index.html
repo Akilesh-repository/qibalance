@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QiBalance - Acupuncture & Traditional Chinese Medicine</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/jpeg" href="images\download.jpg">
+    <link rel="icon" type="image/png" href="images\download.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
     
@@ -178,13 +180,13 @@
         .footer-bottom { border-top: 1px solid var(--border-color); padding: 24px 0; margin-top: 40px; }
     </style>
 </head>
-<body>
+<body class="font-medium">
 
     <nav class="navbar">
         <div class="max-w-[1440px] mx-auto w-full flex items-center justify-between relative">
             
             <div class="flex items-center flex-1 w-full justify-start">
-                <a href="index.html" class="brand-font text-2xl lg:text-3xl font-bold tracking-tight" style="color: #000000; text-decoration: none;">QiBalance</a>
+                <a href="index.html" class="brand-font text-2xl lg:text-3xl font-semibold tracking-tight" style="color: var(--text-main); text-decoration: none;">QiBalance</a>
             </div>
             
             <div class="hidden xl:flex justify-center items-center shrink-0">
@@ -205,17 +207,15 @@
                 <a href="contact.html" class="nav-link">Contact</a>
             </div>
 
-            <div class="hidden xl:flex items-center justify-end flex-1 w-full gap-3">
+            <div class="hidden xl:flex items-center justify-end flex-1 w-full gap-2">
                 <a href="login.html" class="btn btn-outline min-w-[95px] h-[38px] !p-0 !text-[11px] flex items-center justify-center">Login</a> 
                 <a href="register.html" class="btn btn-solid min-w-[95px] h-[38px] !p-0 !text-[11px] flex items-center justify-center">Register</a>
-                
-                <div class="w-px h-6 bg-[var(--border-color)] mx-2"></div>
-                
-                <button id="rtl-btn" class="text-[9px] font-black text-[var(--text-muted)] hover:text-[var(--text-main)] hover:bg-[var(--bg-secondary)] transition-all uppercase tracking-widest border border-[var(--border-color)] px-2.5 py-1.5 rounded">RTL</button>
                 
                 <div id="theme-toggle-desktop" class="theme-toggle-pill" title="Toggle Dark Mode">
                     <i class="fas fa-sun"></i><i class="fas fa-moon"></i><div class="thumb"></div>
                 </div>
+
+                <button id="rtl-btn" class="text-[9px] font-black text-[var(--text-muted)] hover:text-[var(--text-main)] hover:bg-[var(--bg-secondary)] transition-all uppercase tracking-widest border border-[var(--border-color)] px-2.5 py-1.5 rounded">RTL</button>
             </div>
 
             <div class="xl:hidden flex items-center justify-end flex-1 w-full">
@@ -231,7 +231,7 @@
 
     <div class="fullscreen-menu" id="fullscreen-menu">
         <div class="w-full px-6 py-5 flex justify-between items-center border-b border-[var(--border-color)] shrink-0 bg-[var(--bg-secondary)]">
-            <a href="index.html" class="brand-font text-2xl lg:text-3xl font-bold tracking-tight" style="color: #000000; text-decoration: none;">QiBalance</a>
+            <a href="index.html" class="brand-font text-2xl lg:text-3xl font-semibold tracking-tight" style="color: var(--text-main); text-decoration: none;">QiBalance</a>
             <button id="close-menu" class="w-8 h-8 rounded border border-[var(--border-color)] flex items-center justify-center hover:border-[var(--accent-color)] hover:text-[var(--accent-color)] transition-all text-lg bg-[var(--bg-card)] text-[var(--text-muted)]">
                 <i class="fas fa-times"></i>
             </button>
@@ -251,11 +251,11 @@
         <div class="w-full px-6 py-6 border-t border-[var(--border-color)] flex flex-col gap-5 shrink-0 bg-[var(--bg-secondary)]">
             <div class="flex justify-between items-center w-full">
                 <div class="flex items-center gap-3">
-                    <span class="text-[var(--text-muted)] font-bold text-[10px] uppercase tracking-widest">Theme:</span>
+                    <span class="text-[var(--text-muted)] font-semibold text-[10px] uppercase tracking-widest">Theme:</span>
                     <div id="theme-toggle-mobile" class="theme-toggle-pill"><i class="fas fa-sun"></i><i class="fas fa-moon"></i><div class="thumb"></div></div>
                 </div>
                 <div class="flex items-center gap-3">
-                    <span class="text-[var(--text-muted)] font-bold text-[10px] uppercase tracking-widest">Layout:</span>
+                    <span class="text-[var(--text-muted)] font-semibold text-[10px] uppercase tracking-widest">Layout:</span>
                     <button id="rtl-toggle-mobile" class="text-[10px] font-black text-[var(--text-main)] bg-[var(--bg-card)] border border-[var(--border-color)] px-3 py-1.5 rounded hover:border-[var(--accent-color)] transition-colors">LTR / RTL</button>
                 </div>
             </div>
@@ -279,7 +279,7 @@
                 <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded bg-[#6B705C]/30 border border-[#A3B18A]/30 text-[#DAD7CD] text-xs font-semibold uppercase tracking-widest mb-6 backdrop-blur-md">
                     <i class="fa-solid fa-leaf"></i> Holistic Healing & Wellness
                 </div>
-                <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-6 text-white tracking-tight brand-font">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-semibold leading-tight mb-6 text-white tracking-tight brand-font">
                     Restore Your Natural <br>
                     <span style="color: var(--accent-color);">Flow of Qi.</span>
                 </h1>
@@ -304,17 +304,17 @@
                             <i class="fa-solid fa-yin-yang"></i>
                         </div>
                         <div>
-                            <h3 class="text-white font-bold text-lg leading-none brand-font">Dr. Wei Chen, L.Ac.</h3>
+                            <h3 class="text-white font-semibold text-lg leading-none brand-font">Dr. Wei Chen, L.Ac.</h3>
                             <p class="text-[#A3B18A] text-sm mt-1">Licensed Acupuncturist</p>
                         </div>
                     </div>
                     <div class="grid grid-cols-2 gap-4 mb-6">
                         <div class="bg-[#1C1917]/50 rounded-xl p-4 border border-[#6B705C]/20">
-                            <span class="block text-[#DAD7CD] text-[10px] uppercase tracking-widest font-bold mb-1">Experience</span>
+                            <span class="block text-[#DAD7CD] text-[10px] uppercase tracking-widest font-semibold mb-1">Experience</span>
                             <span class="block text-white text-2xl font-black">15+<span class="text-sm font-normal text-[#A3B18A] ms-1">years</span></span>
                         </div>
                         <div class="bg-[#1C1917]/50 rounded-xl p-4 border border-[#6B705C]/20">
-                            <span class="block text-[#DAD7CD] text-[10px] uppercase tracking-widest font-bold mb-1">Therapies</span>
+                            <span class="block text-[#DAD7CD] text-[10px] uppercase tracking-widest font-semibold mb-1">Therapies</span>
                             <span class="block text-white text-2xl font-black">8<span class="text-sm font-normal text-[#A3B18A] ms-1">methods</span></span>
                         </div>
                     </div>
@@ -322,7 +322,7 @@
                         <div class="flex items-center justify-between mb-4">
                             <span class="text-[#E7E5E4] text-sm"><i class="fas fa-check-circle text-[var(--accent-color)] me-2"></i> Accepting New Patients</span>
                         </div>
-                        <a href="contact.html" class="block text-center w-full py-3 rounded bg-[#F5F5F4] text-[#292524] font-bold hover:bg-white transition-colors text-sm shadow-md">View Clinic Hours</a>
+                        <a href="contact.html" class="block text-center w-full py-3 rounded bg-[#F5F5F4] text-[#292524] font-semibold hover:bg-white transition-colors text-sm shadow-md">View Clinic Hours</a>
                     </div>
                 </div>
             </div>
@@ -334,7 +334,7 @@
             <div class="relative w-full h-[500px] rounded-2xl overflow-hidden shadow-2xl group">
                 <div class="absolute inset-0 bg-[var(--accent-dark)] opacity-20 group-hover:opacity-10 transition-opacity z-10 duration-500"></div>
                 <img 
-                    src="images/pexels-cottonbro-8657295.jpg" 
+                    src="images\pexels-gustavo-fring-8770713.jpg" 
                     alt="Patient receiving holistic consultation" 
                     class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
                 >
@@ -344,17 +344,17 @@
                             <i class="fa-solid fa-leaf"></i>
                         </div>
                         <div>
-                            <h4 class="font-bold text-[var(--text-main)] brand-font text-sm">Natural Harmony</h4>
+                            <h4 class="font-semibold text-[var(--text-main)] brand-font text-sm">Natural Harmony</h4>
                             <p class="text-[11px] text-[var(--text-muted)] mt-1 uppercase tracking-wider">Mind & Body Alignment</p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="flex flex-col items-start text-start">
-                <span class="text-[var(--accent-color)] font-bold text-xs uppercase tracking-widest block mb-4">
+                <span class="text-[var(--accent-color)] font-semibold text-xs uppercase tracking-widest block mb-4">
                     The Core of TCM
                 </span>
-                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold brand-font mb-6 leading-tight" style="color: var(--text-main);">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-semibold brand-font mb-6 leading-tight" style="color: var(--text-main);">
                     Treating the Root, <br>
                     Not Just the Symptoms.
                 </h2>
@@ -386,8 +386,8 @@
     <section class="py-24 bg-[var(--bg-color)] relative border-b border-[var(--border-color)]">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-[var(--accent-color)] font-bold text-xs uppercase tracking-widest block mb-3">Holistic Solutions</span>
-                <h2 class="text-3xl md:text-5xl font-bold brand-font mb-6" style="color: var(--text-main);">Conditions We Treat</h2>
+                <span class="text-[var(--accent-color)] font-semibold text-xs uppercase tracking-widest block mb-3">Holistic Solutions</span>
+                <h2 class="text-3xl md:text-5xl font-semibold brand-font mb-6" style="color: var(--text-main);">Conditions We Treat</h2>
                 <p class="text-[var(--text-muted)] text-lg leading-relaxed">
                     Acupuncture and herbal remedies are proven to alleviate a vast array of physical and emotional ailments by encouraging natural recovery.
                 </p>
@@ -397,41 +397,41 @@
                     <div class="w-16 h-16 rounded-full bg-[var(--menu-hover-bg)] flex justify-center items-center mb-6">
                         <i class="fa-solid fa-bone text-2xl text-[var(--accent-color)]"></i>
                     </div>
-                    <h3 class="text-lg font-bold brand-font mb-3 text-[var(--text-main)]">Chronic Pain</h3>
+                    <h3 class="text-lg font-semibold brand-font mb-3 text-[var(--text-main)]">Chronic Pain</h3>
                     <p class="text-[var(--text-muted)] text-sm leading-relaxed mb-6">
                         Effective relief for lower back pain, sciatica, arthritis, and joint stiffness without reliance on heavy medications.
                     </p>
-                    <a href="services.html" class="text-[var(--accent-color)] text-xs font-bold uppercase tracking-widest hover:underline mt-auto">Learn More</a>
+                    <a href="services.html" class="text-[var(--accent-color)] text-xs font-semibold uppercase tracking-widest hover:underline mt-auto">Learn More</a>
                 </div>
                 <div class="bg-[var(--bg-card)] p-8 rounded-2xl border border-[var(--border-color)] hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center flex flex-col items-center">
                     <div class="w-16 h-16 rounded-full bg-[var(--menu-hover-bg)] flex justify-center items-center mb-6">
                         <i class="fa-solid fa-head-side-virus text-2xl text-[var(--accent-color)]"></i>
                     </div>
-                    <h3 class="text-lg font-bold brand-font mb-3 text-[var(--text-main)]">Stress & Anxiety</h3>
+                    <h3 class="text-lg font-semibold brand-font mb-3 text-[var(--text-main)]">Stress & Anxiety</h3>
                     <p class="text-[var(--text-muted)] text-sm leading-relaxed mb-6">
                         Calm your nervous system and regulate cortisol levels to combat daily stress, panic attacks, and clinical anxiety.
                     </p>
-                    <a href="services.html" class="text-[var(--accent-color)] text-xs font-bold uppercase tracking-widest hover:underline mt-auto">Learn More</a>
+                    <a href="services.html" class="text-[var(--accent-color)] text-xs font-semibold uppercase tracking-widest hover:underline mt-auto">Learn More</a>
                 </div>
                 <div class="bg-[var(--bg-card)] p-8 rounded-2xl border border-[var(--border-color)] hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center flex flex-col items-center">
                     <div class="w-16 h-16 rounded-full bg-[var(--menu-hover-bg)] flex justify-center items-center mb-6">
                         <i class="fa-solid fa-bed text-2xl text-[var(--accent-color)]"></i>
                     </div>
-                    <h3 class="text-lg font-bold brand-font mb-3 text-[var(--text-main)]">Sleep Disorders</h3>
+                    <h3 class="text-lg font-semibold brand-font mb-3 text-[var(--text-main)]">Sleep Disorders</h3>
                     <p class="text-[var(--text-muted)] text-sm leading-relaxed mb-6">
                         Address the root causes of insomnia and restless sleep by balancing the body's internal clock and calming the mind.
                     </p>
-                    <a href="services.html" class="text-[var(--accent-color)] text-xs font-bold uppercase tracking-widest hover:underline mt-auto">Learn More</a>
+                    <a href="services.html" class="text-[var(--accent-color)] text-xs font-semibold uppercase tracking-widest hover:underline mt-auto">Learn More</a>
                 </div>
                 <div class="bg-[var(--bg-card)] p-8 rounded-2xl border border-[var(--border-color)] hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center flex flex-col items-center">
                     <div class="w-16 h-16 rounded-full bg-[var(--menu-hover-bg)] flex justify-center items-center mb-6">
                         <i class="fa-solid fa-person-pregnant text-2xl text-[var(--accent-color)]"></i>
                     </div>
-                    <h3 class="text-lg font-bold brand-font mb-3 text-[var(--text-main)]">Women's Health</h3>
+                    <h3 class="text-lg font-semibold brand-font mb-3 text-[var(--text-main)]">Women's Health</h3>
                     <p class="text-[var(--text-muted)] text-sm leading-relaxed mb-6">
                         Support for fertility, menstrual irregularities, menopause symptoms, and overall reproductive wellness.
                     </p>
-                    <a href="services.html" class="text-[var(--accent-color)] text-xs font-bold uppercase tracking-widest hover:underline mt-auto">Learn More</a>
+                    <a href="services.html" class="text-[var(--accent-color)] text-xs font-semibold uppercase tracking-widest hover:underline mt-auto">Learn More</a>
                 </div>
             </div>
         </div>
@@ -439,41 +439,41 @@
 
     <section class="py-24 bg-[var(--bg-card)] relative border-b border-[var(--border-color)]">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-end gap-8 mb-16 border-b border-[var(--border-color)] pb-8">
+            <div class="flex flex-col lg:flex-row justify-between items-center lg:items-end gap-6 mb-16 border-b border-[var(--border-color)] pb-8 text-center lg:text-left">
                 <div class="max-w-2xl">
-                    <span class="text-[var(--accent-color)] font-bold text-xs uppercase tracking-widest block mb-2">Our Healing Team</span>
-                    <h2 class="text-3xl md:text-4xl font-bold brand-font" style="color: var(--text-main);">Meet the Practitioners</h2>
+                    <span class="text-[var(--accent-color)] font-semibold text-xs uppercase tracking-widest block mb-2">Our Healing Team</span>
+                    <h2 class="text-3xl md:text-4xl font-semibold brand-font" style="color: var(--text-main);">Meet the Practitioners</h2>
                 </div>
                 <a href="about.html" class="btn btn-outline shrink-0 whitespace-nowrap">View All Staff</a>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div class="flex flex-col sm:flex-row gap-8 items-center sm:items-start group">
-                    <div class="w-48 h-48 sm:w-56 sm:h-56 shrink-0 rounded-full overflow-hidden border-4 border-[var(--bg-secondary)] shadow-lg relative">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="flex flex-col md:flex-row gap-8 items-center md:items-start group bg-[var(--bg-card)] p-0 md:p-6 lg:p-0 rounded-2xl">
+                    <div class="w-48 h-48 md:w-56 md:h-56 shrink-0 rounded-full overflow-hidden border-4 border-[var(--bg-secondary)] shadow-lg relative">
                         <img src="images/pexels-rdne-8313221.jpg" alt="Dr. Wei Chen" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     </div>
-                    <div class="text-center sm:text-start flex-1">
-                        <h3 class="text-2xl font-bold brand-font mb-1 text-[var(--text-main)]">Dr. Wei Chen</h3>
+                    <div class="text-center md:text-start flex-1">
+                        <h3 class="text-2xl font-semibold brand-font mb-1 text-[var(--text-main)]">Dr. Wei Chen</h3>
                         <p class="text-[var(--accent-color)] text-sm font-semibold uppercase tracking-widest mb-4">Lead Acupuncturist, L.Ac.</p>
                         <p class="text-[var(--text-muted)] text-sm leading-relaxed mb-6">
                             With over 15 years of clinical experience, Dr. Chen specializes in pain management and neurological disorders. He integrates ancient needle techniques with modern diagnostic tools to provide unparalleled patient outcomes.
                         </p>
-                        <div class="flex gap-3 justify-center sm:justify-start">
+                        <div class="flex gap-3 justify-center md:justify-start">
                             <a href="#" class="w-8 h-8 rounded-full bg-[var(--bg-secondary)] text-[var(--text-muted)] flex items-center justify-center hover:bg-[var(--accent-color)] hover:text-white transition-colors"><i class="fab fa-linkedin-in text-xs"></i></a>
                             <a href="#" class="w-8 h-8 rounded-full bg-[var(--bg-secondary)] text-[var(--text-muted)] flex items-center justify-center hover:bg-[var(--accent-color)] hover:text-white transition-colors"><i class="fa-solid fa-envelope text-xs"></i></a>
                         </div>
                     </div>
                 </div>
-                <div class="flex flex-col sm:flex-row gap-8 items-center sm:items-start group">
-                    <div class="w-48 h-48 sm:w-56 sm:h-56 shrink-0 rounded-full overflow-hidden border-4 border-[var(--bg-secondary)] shadow-lg relative">
-                        <img src="images/pexels-rdne-8313243.jpg" alt="Liang Mei" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                <div class="flex flex-col md:flex-row gap-8 items-center md:items-start group bg-[var(--bg-card)] p-0 md:p-6 lg:p-0 rounded-2xl">
+                    <div class="w-48 h-48 md:w-56 md:h-56 shrink-0 rounded-full overflow-hidden border-4 border-[var(--bg-secondary)] shadow-lg relative">
+                        <img src="images\pexels-sagar-tiwari-988598841-27298085.jpg" alt="Liang Mei" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     </div>
-                    <div class="text-center sm:text-start flex-1">
-                        <h3 class="text-2xl font-bold brand-font mb-1 text-[var(--text-main)]">Dr. Liang Mei</h3>
+                    <div class="text-center md:text-start flex-1">
+                        <h3 class="text-2xl font-semibold brand-font mb-1 text-[var(--text-main)]">Dr. Liang Mei</h3>
                         <p class="text-[var(--accent-color)] text-sm font-semibold uppercase tracking-widest mb-4">Master Herbalist & Cupping Spc.</p>
                         <p class="text-[var(--text-muted)] text-sm leading-relaxed mb-6">
                             Dr. Mei brings generations of family herbal knowledge to the clinic. Her custom tinctures and precise fire-cupping methodologies have helped hundreds of patients overcome chronic fatigue and digestive issues.
                         </p>
-                        <div class="flex gap-3 justify-center sm:justify-start">
+                        <div class="flex gap-3 justify-center md:justify-start">
                             <a href="#" class="w-8 h-8 rounded-full bg-[var(--bg-secondary)] text-[var(--text-muted)] flex items-center justify-center hover:bg-[var(--accent-color)] hover:text-white transition-colors"><i class="fab fa-linkedin-in text-xs"></i></a>
                             <a href="#" class="w-8 h-8 rounded-full bg-[var(--bg-secondary)] text-[var(--text-muted)] flex items-center justify-center hover:bg-[var(--accent-color)] hover:text-white transition-colors"><i class="fa-solid fa-envelope text-xs"></i></a>
                         </div>
@@ -486,17 +486,17 @@
     <section class="py-24 bg-[var(--bg-secondary)] relative border-b border-[var(--border-color)]">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-[var(--accent-color)] font-bold text-xs uppercase tracking-widest block mb-3">Your Journey</span>
-                <h2 class="text-3xl md:text-4xl font-bold brand-font mb-6" style="color: var(--text-main);">The Healing Process</h2>
+                <span class="text-[var(--accent-color)] font-semibold text-xs uppercase tracking-widest block mb-3">Your Journey</span>
+                <h2 class="text-3xl md:text-4xl font-semibold brand-font mb-6" style="color: var(--text-main);">The Healing Process</h2>
                 <p class="text-[var(--text-muted)] text-lg leading-relaxed">We guide you through a comprehensive, step-by-step approach to ensure your treatment is safe, effective, and deeply personalized.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
                 <div class="flex flex-col items-center text-center relative">
                     <div class="w-full h-48 rounded-xl overflow-hidden mb-6 shadow-md relative">
                         <img src="images/pexels-rdne-8313427.jpg" alt="Consultation phase" class="w-full h-full object-cover">
-                        <div class="absolute top-4 left-4 w-8 h-8 bg-white text-[var(--accent-color)] font-bold rounded-full flex justify-center items-center shadow-lg">1</div>
+                        <div class="absolute top-4 left-4 w-8 h-8 bg-white text-[var(--accent-color)] font-semibold rounded-full flex justify-center items-center shadow-lg">1</div>
                     </div>
-                    <h3 class="text-xl font-bold brand-font mb-3 text-[var(--text-main)]">Initial Consultation</h3>
+                    <h3 class="text-xl font-semibold brand-font mb-3 text-[var(--text-main)]">Initial Consultation</h3>
                     <p class="text-[var(--text-muted)] text-sm leading-relaxed">
                         We begin with an in-depth review of your health history, utilizing traditional pulse and tongue diagnosis to understand your unique baseline.
                     </p>
@@ -504,19 +504,19 @@
                 <div class="flex flex-col items-center text-center relative">
                     <div class="w-full h-48 rounded-xl overflow-hidden mb-6 shadow-md relative">
                         <img src="images/pexels-cottonbro-8666807.jpg" alt="Treatment phase" class="w-full h-full object-cover">
-                        <div class="absolute top-4 left-4 w-8 h-8 bg-white text-[var(--accent-color)] font-bold rounded-full flex justify-center items-center shadow-lg">2</div>
+                        <div class="absolute top-4 left-4 w-8 h-8 bg-white text-[var(--accent-color)] font-semibold rounded-full flex justify-center items-center shadow-lg">2</div>
                     </div>
-                    <h3 class="text-xl font-bold brand-font mb-3 text-[var(--text-main)]">Custom Treatment</h3>
+                    <h3 class="text-xl font-semibold brand-font mb-3 text-[var(--text-main)]">Custom Treatment</h3>
                     <p class="text-[var(--text-muted)] text-sm leading-relaxed">
                         You receive a tailored therapy session, which may include a combination of fine-needle acupuncture, cupping, or moxibustion in a serene setting.
                     </p>
                 </div>
                 <div class="flex flex-col items-center text-center relative">
                     <div class="w-full h-48 rounded-xl overflow-hidden mb-6 shadow-md relative">
-                        <img src="images/pexels-rdne-8312895.jpg" alt="Prescription phase" class="w-full h-full object-cover">
-                        <div class="absolute top-4 left-4 w-8 h-8 bg-white text-[var(--accent-color)] font-bold rounded-full flex justify-center items-center shadow-lg">3</div>
+                        <img src="images\pexels-n-voitkevich-7526022.jpg" alt="Prescription phase" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 w-8 h-8 bg-white text-[var(--accent-color)] font-semibold rounded-full flex justify-center items-center shadow-lg">3</div>
                     </div>
-                    <h3 class="text-xl font-bold brand-font mb-3 text-[var(--text-main)]">Herbal Prescription</h3>
+                    <h3 class="text-xl font-semibold brand-font mb-3 text-[var(--text-main)]">Herbal Prescription</h3>
                     <p class="text-[var(--text-muted)] text-sm leading-relaxed">
                         To sustain the healing process at home, we provide specific herbal formulas and lifestyle/dietary recommendations to maintain your Qi.
                     </p>
@@ -531,23 +531,23 @@
     <section class="py-24 bg-[var(--bg-color)] relative border-b border-[var(--border-color)]">
         <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             <div class="lg:col-span-5 sticky top-28">
-                <span class="text-[var(--accent-color)] font-bold text-xs uppercase tracking-widest block mb-2">Patient Resources</span>
-                <h2 class="text-3xl md:text-4xl font-bold brand-font mb-6" style="color: var(--text-main);">Frequently Asked Questions</h2>
+                <span class="text-[var(--accent-color)] font-semibold text-xs uppercase tracking-widest block mb-2">Patient Resources</span>
+                <h2 class="text-3xl md:text-4xl font-semibold brand-font mb-6" style="color: var(--text-main);">Frequently Asked Questions</h2>
                 <p class="text-[var(--text-muted)] leading-relaxed mb-8">
                     It is normal to have questions before beginning Traditional Chinese Medicine treatments. We emphasize transparency and patient education.
                 </p>
                 <div class="rounded-xl overflow-hidden shadow-lg border border-[var(--border-color)] mb-8">
-                    <img src="images/pexels-chinese-medicine-podcast-podcast-1290426-12809523.jpg" alt="Patient education podcast" class="w-full h-48 object-cover">
+                    <img src="images\pexels-cottonbro-7598543.jpg" alt="Patient education podcast" class="w-full h-48 object-cover">
                     <div class="p-5 bg-[var(--bg-card)]">
-                        <h4 class="font-bold text-[var(--text-main)] mb-1">Listen to our Wellness Podcast</h4>
+                        <h4 class="font-semibold text-[var(--text-main)] mb-1">Listen to our Wellness Podcast</h4>
                         <p class="text-xs text-[var(--text-muted)] mb-3">Weekly insights on holistic health and herbal care.</p>
-                        <a href="blog.html" class="text-[var(--accent-color)] text-xs font-bold uppercase hover:underline">Tune In Now &rarr;</a>
+                        <a href="blog.html" class="text-[var(--accent-color)] text-xs font-semibold uppercase hover:underline">Tune In Now &rarr;</a>
                     </div>
                 </div>
             </div>
             <div class="lg:col-span-7 flex flex-col gap-4">
                 <div class="bg-[var(--bg-card)] border border-[var(--border-color)] rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                    <h3 class="text-lg font-bold brand-font mb-3 text-[var(--text-main)] flex justify-between items-center">
+                    <h3 class="text-lg font-semibold brand-font mb-3 text-[var(--text-main)] flex justify-between items-center">
                         Does acupuncture hurt? <i class="fa-solid fa-plus text-[var(--accent-color)] text-sm"></i>
                     </h3>
                     <p class="text-[var(--text-muted)] text-sm leading-relaxed">
@@ -555,7 +555,7 @@
                     </p>
                 </div>
                 <div class="bg-[var(--bg-card)] border border-[var(--border-color)] rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                    <h3 class="text-lg font-bold brand-font mb-3 text-[var(--text-main)] flex justify-between items-center">
+                    <h3 class="text-lg font-semibold brand-font mb-3 text-[var(--text-main)] flex justify-between items-center">
                         How many treatments will I need? <i class="fa-solid fa-plus text-[var(--accent-color)] text-sm"></i>
                     </h3>
                     <p class="text-[var(--text-muted)] text-sm leading-relaxed">
@@ -563,7 +563,7 @@
                     </p>
                 </div>
                 <div class="bg-[var(--bg-card)] border border-[var(--border-color)] rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                    <h3 class="text-lg font-bold brand-font mb-3 text-[var(--text-main)] flex justify-between items-center">
+                    <h3 class="text-lg font-semibold brand-font mb-3 text-[var(--text-main)] flex justify-between items-center">
                         Do you accept health insurance? <i class="fa-solid fa-plus text-[var(--accent-color)] text-sm"></i>
                     </h3>
                     <p class="text-[var(--text-muted)] text-sm leading-relaxed">
@@ -571,7 +571,7 @@
                     </p>
                 </div>
                 <div class="bg-[var(--bg-card)] border border-[var(--border-color)] rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                    <h3 class="text-lg font-bold brand-font mb-3 text-[var(--text-main)] flex justify-between items-center">
+                    <h3 class="text-lg font-semibold brand-font mb-3 text-[var(--text-main)] flex justify-between items-center">
                         Are Chinese herbs safe to take with medication? <i class="fa-solid fa-plus text-[var(--accent-color)] text-sm"></i>
                     </h3>
                     <p class="text-[var(--text-muted)] text-sm leading-relaxed">
@@ -587,7 +587,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-10 pt-4">
                 <div class="lg:col-span-4">
                     <div class="mb-6">
-                        <a href="index.html" class="brand-font text-2xl lg:text-3xl font-bold tracking-tight" style="color: #000000; text-decoration: none;">QiBalance</a>
+                        <a href="index.html" class="brand-font text-2xl lg:text-3xl font-semibold tracking-tight" style="color: var(--text-main); text-decoration: none;">QiBalance</a>
                     </div>
                     <p class="opacity-80 leading-relaxed text-sm mb-6 max-w-sm" style="color: var(--text-muted);">
                         A sanctuary for holistic healing. We combine ancient Traditional Chinese Medicine practices with modern care to help you achieve optimal physical and mental harmony.

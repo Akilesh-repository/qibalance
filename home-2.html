@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QiBalance - Alternative Home Page</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/jpeg" href="images\download.jpg">
+    <link rel="icon" type="image/png" href="images\download.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
     
@@ -178,14 +180,14 @@
         .footer-bottom { border-top: 1px solid var(--border-color); padding: 24px 0; margin-top: 40px; }
     </style>
 </head>
-<body>
+<body class="font-medium">
 
     <!-- ================= NAVBAR PART ================= -->
     <nav class="navbar">
         <div class="max-w-[1440px] mx-auto w-full flex items-center justify-between relative">
             
             <div class="flex items-center flex-1 w-full justify-start">
-                <a href="index.html" class="brand-font text-2xl lg:text-3xl font-bold tracking-tight" style="color: #000000; text-decoration: none;">QiBalance</a>
+                <a href="index.html" class="brand-font text-2xl lg:text-3xl font-semibold tracking-tight" style="color: var(--text-main); text-decoration: none;">QiBalance</a>
             </div>
             
             <div class="hidden xl:flex justify-center items-center shrink-0">
@@ -206,17 +208,15 @@
                 <a href="contact.html" class="nav-link">Contact</a>
             </div>
 
-            <div class="hidden xl:flex items-center justify-end flex-1 w-full gap-3">
+            <div class="hidden xl:flex items-center justify-end flex-1 w-full gap-2">
                 <a href="login.html" class="btn btn-outline min-w-[95px] h-[38px] !p-0 !text-[11px] flex items-center justify-center">Login</a> 
                 <a href="register.html" class="btn btn-solid min-w-[95px] h-[38px] !p-0 !text-[11px] flex items-center justify-center">Register</a>
-                
-                <div class="w-px h-6 bg-[var(--border-color)] mx-2"></div>
-                
-                <button id="rtl-btn" class="text-[9px] font-black text-[var(--text-muted)] hover:text-[var(--text-main)] hover:bg-[var(--bg-secondary)] transition-all uppercase tracking-widest border border-[var(--border-color)] px-2.5 py-1.5 rounded">RTL</button>
                 
                 <div id="theme-toggle-desktop" class="theme-toggle-pill" title="Toggle Dark Mode">
                     <i class="fas fa-sun"></i><i class="fas fa-moon"></i><div class="thumb"></div>
                 </div>
+
+                <button id="rtl-btn" class="text-[9px] font-black text-[var(--text-muted)] hover:text-[var(--text-main)] hover:bg-[var(--bg-secondary)] transition-all uppercase tracking-widest border border-[var(--border-color)] px-2.5 py-1.5 rounded">RTL</button>
             </div>
 
             <div class="xl:hidden flex items-center justify-end flex-1 w-full">
@@ -233,7 +233,7 @@
 
     <div class="fullscreen-menu" id="fullscreen-menu">
         <div class="w-full px-6 py-5 flex justify-between items-center border-b border-[var(--border-color)] shrink-0 bg-[var(--bg-secondary)]">
-            <a href="index.html" class="brand-font text-2xl font-bold tracking-tight" style="color: #000000; text-decoration: none;">QiBalance</a>
+            <a href="index.html" class="brand-font text-2xl font-semibold tracking-tight" style="color: #000000; text-decoration: none;">QiBalance</a>
             <button id="close-menu" class="w-8 h-8 rounded border border-[var(--border-color)] flex items-center justify-center hover:border-[var(--accent-color)] hover:text-[var(--accent-color)] transition-all text-lg bg-[var(--bg-card)] text-[var(--text-muted)]">
                 <i class="fas fa-times"></i>
             </button>
@@ -253,11 +253,11 @@
         <div class="w-full px-6 py-6 border-t border-[var(--border-color)] flex flex-col gap-5 shrink-0 bg-[var(--bg-secondary)]">
             <div class="flex justify-between items-center w-full">
                 <div class="flex items-center gap-3">
-                    <span class="text-[var(--text-muted)] font-bold text-[10px] uppercase tracking-widest">Theme:</span>
+                    <span class="text-[var(--text-muted)] font-semibold text-[10px] uppercase tracking-widest">Theme:</span>
                     <div id="theme-toggle-mobile" class="theme-toggle-pill"><i class="fas fa-sun"></i><i class="fas fa-moon"></i><div class="thumb"></div></div>
                 </div>
                 <div class="flex items-center gap-3">
-                    <span class="text-[var(--text-muted)] font-bold text-[10px] uppercase tracking-widest">Layout:</span>
+                    <span class="text-[var(--text-muted)] font-semibold text-[10px] uppercase tracking-widest">Layout:</span>
                     <button id="rtl-toggle-mobile" class="text-[10px] font-black text-[var(--text-main)] bg-[var(--bg-card)] border border-[var(--border-color)] px-3 py-1.5 rounded hover:border-[var(--accent-color)] transition-colors">LTR / RTL</button>
                 </div>
             </div>
@@ -274,10 +274,10 @@
         
         <!-- Left Text Area -->
         <div class="w-full lg:w-1/2 px-6 py-16 lg:py-32 flex flex-col justify-center z-10 max-w-3xl lg:ml-auto lg:pr-16 xl:pr-24 text-center lg:text-left items-center lg:items-start">
-            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[var(--bg-secondary)] border border-[var(--border-color)] text-[var(--accent-dark)] text-xs font-bold uppercase tracking-widest mb-8">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[var(--bg-secondary)] border border-[var(--border-color)] text-[var(--accent-dark)] text-xs font-semibold uppercase tracking-widest mb-8">
                 <i class="fa-solid fa-yin-yang text-[var(--accent-color)]"></i> Find Your Center
             </div>
-            <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-6 brand-font text-[var(--text-main)] tracking-tight">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-semibold leading-tight mb-6 brand-font text-[var(--text-main)] tracking-tight">
                 Traditional Care for a <br>
                 <span style="color: var(--accent-color); font-style: italic;">Balanced Life.</span>
             </h1>
@@ -321,29 +321,29 @@
         <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 32px 32px;"></div>
         <div class="max-w-7xl mx-auto px-6 relative z-10">
             <div class="text-center mb-12">
-                <span class="text-[#A3B18A] font-bold text-xs uppercase tracking-widest block mb-3">Trusted Across Generations</span>
-                <h2 class="text-3xl md:text-4xl font-bold brand-font text-white">A Legacy of Healing, Measured in Lives</h2>
+                <span class="text-[#A3B18A] font-semibold text-xs uppercase tracking-widest block mb-3">Trusted Across Generations</span>
+                <h2 class="text-3xl md:text-4xl font-semibold brand-font text-white">A Legacy of Healing, Measured in Lives</h2>
             </div>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                 <div class="text-white border-r border-white/10 last:border-0 md:px-4">
                     <i class="fa-solid fa-user-check text-3xl mb-4 text-[#A3B18A]"></i>
-                    <h3 class="text-4xl md:text-5xl font-bold brand-font mb-2">8,500+</h3>
-                    <p class="text-[#DAD7CD] text-[10px] uppercase tracking-widest font-bold">Patients Treated</p>
+                    <h3 class="text-4xl md:text-5xl font-semibold brand-font mb-2">8,500+</h3>
+                    <p class="text-[#DAD7CD] text-[10px] uppercase tracking-widest font-semibold">Patients Treated</p>
                 </div>
                 <div class="text-white border-r border-white/10 last:border-0 md:px-4">
                     <i class="fa-solid fa-mortar-pestle text-3xl mb-4 text-[#A3B18A]"></i>
-                    <h3 class="text-4xl md:text-5xl font-bold brand-font mb-2">1,200+</h3>
-                    <p class="text-[#DAD7CD] text-[10px] uppercase tracking-widest font-bold">Custom Herbal Formulas</p>
+                    <h3 class="text-4xl md:text-5xl font-semibold brand-font mb-2">1,200+</h3>
+                    <p class="text-[#DAD7CD] text-[10px] uppercase tracking-widest font-semibold">Custom Herbal Formulas</p>
                 </div>
                 <div class="text-white border-r border-white/10 last:border-0 md:px-4">
                     <i class="fa-solid fa-award text-3xl mb-4 text-[#A3B18A]"></i>
-                    <h3 class="text-4xl md:text-5xl font-bold brand-font mb-2">15+</h3>
-                    <p class="text-[#DAD7CD] text-[10px] uppercase tracking-widest font-bold">Years of Practice</p>
+                    <h3 class="text-4xl md:text-5xl font-semibold brand-font mb-2">15+</h3>
+                    <p class="text-[#DAD7CD] text-[10px] uppercase tracking-widest font-semibold">Years of Practice</p>
                 </div>
                 <div class="text-white md:px-4">
                     <i class="fa-solid fa-heart-pulse text-3xl mb-4 text-[#A3B18A]"></i>
-                    <h3 class="text-4xl md:text-5xl font-bold brand-font mb-2">96%</h3>
-                    <p class="text-[#DAD7CD] text-[10px] uppercase tracking-widest font-bold">Patient Satisfaction</p>
+                    <h3 class="text-4xl md:text-5xl font-semibold brand-font mb-2">96%</h3>
+                    <p class="text-[#DAD7CD] text-[10px] uppercase tracking-widest font-semibold">Patient Satisfaction</p>
                 </div>
             </div>
         </div>
@@ -353,8 +353,8 @@
     <section class="py-24 bg-[var(--bg-color)] relative border-b border-[var(--border-color)]">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-[var(--accent-color)] font-bold text-xs uppercase tracking-widest block mb-3">Our Philosophy</span>
-                <h2 class="text-3xl md:text-5xl font-bold brand-font mb-6" style="color: var(--text-main);">The Five Pillars of QiBalance</h2>
+                <span class="text-[var(--accent-color)] font-semibold text-xs uppercase tracking-widest block mb-3">Our Philosophy</span>
+                <h2 class="text-3xl md:text-5xl font-semibold brand-font mb-6" style="color: var(--text-main);">The Five Pillars of QiBalance</h2>
                 <p class="text-[var(--text-muted)] text-lg leading-relaxed">
                     Our practice is founded on timeless principles that guide every treatment, every consultation, and every relationship we build with our patients.
                 </p>
@@ -368,8 +368,8 @@
                         <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-[var(--accent-color)] to-[var(--accent-dark)] flex justify-center items-center mb-6 text-white text-xl shadow-md">
                             <i class="fa-solid fa-hand-holding-heart"></i>
                         </div>
-                        <span class="text-[var(--accent-color)] text-[10px] font-bold uppercase tracking-widest block mb-2">Pillar One</span>
-                        <h3 class="text-xl font-bold brand-font mb-3 text-[var(--text-main)]">Compassionate Care</h3>
+                        <span class="text-[var(--accent-color)] text-[10px] font-semibold uppercase tracking-widest block mb-2">Pillar One</span>
+                        <h3 class="text-xl font-semibold brand-font mb-3 text-[var(--text-main)]">Compassionate Care</h3>
                         <p class="text-[var(--text-muted)] text-sm leading-relaxed">Every patient is treated as a whole person, not a collection of symptoms. We listen deeply, observe carefully, and respond with genuine warmth.</p>
                     </div>
                 </div>
@@ -380,8 +380,8 @@
                         <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-[var(--accent-color)] to-[var(--accent-dark)] flex justify-center items-center mb-6 text-white text-xl shadow-md">
                             <i class="fa-solid fa-seedling"></i>
                         </div>
-                        <span class="text-[var(--accent-color)] text-[10px] font-bold uppercase tracking-widest block mb-2">Pillar Two</span>
-                        <h3 class="text-xl font-bold brand-font mb-3 text-[var(--text-main)]">Natural Healing</h3>
+                        <span class="text-[var(--accent-color)] text-[10px] font-semibold uppercase tracking-widest block mb-2">Pillar Two</span>
+                        <h3 class="text-xl font-semibold brand-font mb-3 text-[var(--text-main)]">Natural Healing</h3>
                         <p class="text-[var(--text-muted)] text-sm leading-relaxed">We harness the innate wisdom of nature—herbs, needles, and touch—to awaken your body's own remarkable ability to heal and restore balance.</p>
                     </div>
                 </div>
@@ -392,8 +392,8 @@
                         <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-[var(--accent-color)] to-[var(--accent-dark)] flex justify-center items-center mb-6 text-white text-xl shadow-md">
                             <i class="fa-solid fa-yin-yang"></i>
                         </div>
-                        <span class="text-[var(--accent-color)] text-[10px] font-bold uppercase tracking-widest block mb-2">Pillar Three</span>
-                        <h3 class="text-xl font-bold brand-font mb-3 text-[var(--text-main)]">Energetic Balance</h3>
+                        <span class="text-[var(--accent-color)] text-[10px] font-semibold uppercase tracking-widest block mb-2">Pillar Three</span>
+                        <h3 class="text-xl font-semibold brand-font mb-3 text-[var(--text-main)]">Energetic Balance</h3>
                         <p class="text-[var(--text-muted)] text-sm leading-relaxed">True wellness emerges when Qi flows freely. Our therapies gently unblock stagnation and restore the dynamic equilibrium of Yin and Yang.</p>
                     </div>
                 </div>
@@ -407,8 +407,8 @@
                         <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-[var(--accent-color)] to-[var(--accent-dark)] flex justify-center items-center mb-6 text-white text-xl shadow-md">
                             <i class="fa-solid fa-book-open-reader"></i>
                         </div>
-                        <span class="text-[var(--accent-color)] text-[10px] font-bold uppercase tracking-widest block mb-2">Pillar Four</span>
-                        <h3 class="text-xl font-bold brand-font mb-3 text-[var(--text-main)]">Patient Education</h3>
+                        <span class="text-[var(--accent-color)] text-[10px] font-semibold uppercase tracking-widest block mb-2">Pillar Four</span>
+                        <h3 class="text-xl font-semibold brand-font mb-3 text-[var(--text-main)]">Patient Education</h3>
                         <p class="text-[var(--text-muted)] text-sm leading-relaxed">We empower you with knowledge—explaining the "why" behind every needle, herb, and recommendation so you become the steward of your own health.</p>
                     </div>
                 </div>
@@ -419,8 +419,8 @@
                         <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-[var(--accent-color)] to-[var(--accent-dark)] flex justify-center items-center mb-6 text-white text-xl shadow-md">
                             <i class="fa-solid fa-shield-heart"></i>
                         </div>
-                        <span class="text-[var(--accent-color)] text-[10px] font-bold uppercase tracking-widest block mb-2">Pillar Five</span>
-                        <h3 class="text-xl font-bold brand-font mb-3 text-[var(--text-main)]">Lasting Wellness</h3>
+                        <span class="text-[var(--accent-color)] text-[10px] font-semibold uppercase tracking-widest block mb-2">Pillar Five</span>
+                        <h3 class="text-xl font-semibold brand-font mb-3 text-[var(--text-main)]">Lasting Wellness</h3>
                         <p class="text-[var(--text-muted)] text-sm leading-relaxed">We don't chase quick fixes. Our goal is to equip you with sustainable practices and periodic care that maintains vitality for a lifetime.</p>
                     </div>
                 </div>
@@ -433,8 +433,8 @@
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-end gap-6 mb-16">
                 <div class="max-w-2xl">
-                    <span class="text-[var(--accent-color)] font-bold text-xs uppercase tracking-widest block mb-2">Insights & Wisdom</span>
-                    <h2 class="text-3xl md:text-4xl font-bold brand-font" style="color: var(--text-main);">From Our Wellness Journal</h2>
+                    <span class="text-[var(--accent-color)] font-semibold text-xs uppercase tracking-widest block mb-2">Insights & Wisdom</span>
+                    <h2 class="text-3xl md:text-4xl font-semibold brand-font" style="color: var(--text-main);">From Our Wellness Journal</h2>
                     <p class="text-[var(--text-muted)] mt-4 leading-relaxed">Explore articles written by our practitioners on the art, science, and soul of Traditional Chinese Medicine.</p>
                 </div>
                 <a href="blog.html" class="btn btn-outline shrink-0 whitespace-nowrap">Read All Articles</a>
@@ -445,7 +445,7 @@
                     <div class="h-56 overflow-hidden relative">
                         <img src="images/pexels-rdne-8312859.jpg" alt="Herbal medicine" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-                        <div class="absolute top-4 left-4 bg-[var(--accent-color)] text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded">Herbal Medicine</div>
+                        <div class="absolute top-4 left-4 bg-[var(--accent-color)] text-white text-[10px] font-semibold uppercase tracking-widest px-3 py-1.5 rounded">Herbal Medicine</div>
                     </div>
                     <div class="p-6 flex flex-col flex-1">
                         <div class="flex items-center gap-3 text-xs text-[var(--text-muted)] mb-3">
@@ -453,13 +453,13 @@
                             <span>•</span>
                             <span>5 min read</span>
                         </div>
-                        <h3 class="text-lg font-bold brand-font mb-3 text-[var(--text-main)] group-hover:text-[var(--accent-color)] transition-colors leading-snug">
+                        <h3 class="text-lg font-semibold brand-font mb-3 text-[var(--text-main)] group-hover:text-[var(--accent-color)] transition-colors leading-snug">
                             5 Ancient Herbs That Calm Modern Anxiety
                         </h3>
                         <p class="text-[var(--text-muted)] text-sm leading-relaxed mb-5 flex-1">
                             Discover how adaptogenic herbs used for centuries in TCM can help regulate your nervous system in today's high-stress world.
                         </p>
-                        <a href="blog.html" class="inline-flex items-center gap-2 text-[var(--accent-color)] font-bold text-xs uppercase tracking-widest hover:text-[var(--accent-dark)] transition-colors">
+                        <a href="blog.html" class="inline-flex items-center gap-2 text-[var(--accent-color)] font-semibold text-xs uppercase tracking-widest hover:text-[var(--accent-dark)] transition-colors">
                             Continue Reading <i class="fa-solid fa-arrow-right text-[10px]"></i>
                         </a>
                     </div>
@@ -469,7 +469,7 @@
                     <div class="h-56 overflow-hidden relative">
                         <img src="images/pexels-cottonbro-8666434.jpg" alt="Acupuncture" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-                        <div class="absolute top-4 left-4 bg-[var(--accent-color)] text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded">Acupuncture</div>
+                        <div class="absolute top-4 left-4 bg-[var(--accent-color)] text-white text-[10px] font-semibold uppercase tracking-widest px-3 py-1.5 rounded">Acupuncture</div>
                     </div>
                     <div class="p-6 flex flex-col flex-1">
                         <div class="flex items-center gap-3 text-xs text-[var(--text-muted)] mb-3">
@@ -477,13 +477,13 @@
                             <span>•</span>
                             <span>7 min read</span>
                         </div>
-                        <h3 class="text-lg font-bold brand-font mb-3 text-[var(--text-main)] group-hover:text-[var(--accent-color)] transition-colors leading-snug">
+                        <h3 class="text-lg font-semibold brand-font mb-3 text-[var(--text-main)] group-hover:text-[var(--accent-color)] transition-colors leading-snug">
                             Understanding Meridians: Energy Maps of the Body
                         </h3>
                         <p class="text-[var(--text-muted)] text-sm leading-relaxed mb-5 flex-1">
                             A beginner's guide to the 12 primary meridians and how blockages along these pathways manifest as physical and emotional symptoms.
                         </p>
-                        <a href="blog.html" class="inline-flex items-center gap-2 text-[var(--accent-color)] font-bold text-xs uppercase tracking-widest hover:text-[var(--accent-dark)] transition-colors">
+                        <a href="blog.html" class="inline-flex items-center gap-2 text-[var(--accent-color)] font-semibold text-xs uppercase tracking-widest hover:text-[var(--accent-dark)] transition-colors">
                             Continue Reading <i class="fa-solid fa-arrow-right text-[10px]"></i>
                         </a>
                     </div>
@@ -493,7 +493,7 @@
                     <div class="h-56 overflow-hidden relative">
                         <img src="images/pexels-maksgelatin-6094075.jpg" alt="Cupping therapy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-                        <div class="absolute top-4 left-4 bg-[var(--accent-color)] text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded">Cupping</div>
+                        <div class="absolute top-4 left-4 bg-[var(--accent-color)] text-white text-[10px] font-semibold uppercase tracking-widest px-3 py-1.5 rounded">Cupping</div>
                     </div>
                     <div class="p-6 flex flex-col flex-1">
                         <div class="flex items-center gap-3 text-xs text-[var(--text-muted)] mb-3">
@@ -501,13 +501,13 @@
                             <span>•</span>
                             <span>4 min read</span>
                         </div>
-                        <h3 class="text-lg font-bold brand-font mb-3 text-[var(--text-main)] group-hover:text-[var(--accent-color)] transition-colors leading-snug">
+                        <h3 class="text-lg font-semibold brand-font mb-3 text-[var(--text-main)] group-hover:text-[var(--accent-color)] transition-colors leading-snug">
                             Cupping Marks: What Those Colors Really Mean
                         </h3>
                         <p class="text-[var(--text-muted)] text-sm leading-relaxed mb-5 flex-1">
                             Demystifying the purple, red, and pink marks left after cupping therapy — and what each shade reveals about your circulation.
                         </p>
-                        <a href="blog.html" class="inline-flex items-center gap-2 text-[var(--accent-color)] font-bold text-xs uppercase tracking-widest hover:text-[var(--accent-dark)] transition-colors">
+                        <a href="blog.html" class="inline-flex items-center gap-2 text-[var(--accent-color)] font-semibold text-xs uppercase tracking-widest hover:text-[var(--accent-dark)] transition-colors">
                             Continue Reading <i class="fa-solid fa-arrow-right text-[10px]"></i>
                         </a>
                     </div>
@@ -532,7 +532,7 @@
                     <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-6">
                         <i class="fa-solid fa-spa text-3xl text-[#A3B18A]"></i>
                     </div>
-                    <h2 class="text-3xl md:text-5xl font-bold brand-font mb-6 leading-tight">
+                    <h2 class="text-3xl md:text-5xl font-semibold brand-font mb-6 leading-tight">
                         Begin Your Healing Journey <br>
                         <span class="italic text-[#DAD7CD]">Today.</span>
                     </h2>
@@ -540,11 +540,11 @@
                         Your path to balance, vitality, and lasting wellness is one consultation away. Schedule a session with our practitioners and feel the difference ancient wisdom can make.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                        <a href="pricing.html" class="bg-white text-[var(--accent-dark)] font-bold py-4 px-8 rounded uppercase text-sm tracking-widest hover:bg-[#F5F5F4] hover:shadow-xl transition-all flex items-center gap-2 group">
+                        <a href="pricing.html" class="bg-white text-[var(--accent-dark)] font-semibold py-4 px-8 rounded uppercase text-sm tracking-widest hover:bg-[#F5F5F4] hover:shadow-xl transition-all flex items-center gap-2 group">
                             <span>Book Your First Visit</span>
                             <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
                         </a>
-                        <a href="contact.html" class="border-2 border-white text-white font-bold py-4 px-8 rounded uppercase text-sm tracking-widest hover:bg-white hover:text-[var(--accent-dark)] transition-all flex items-center gap-2">
+                        <a href="contact.html" class="border-2 border-white text-white font-semibold py-4 px-8 rounded uppercase text-sm tracking-widest hover:bg-white hover:text-[var(--accent-dark)] transition-all flex items-center gap-2">
                             <i class="fa-solid fa-phone text-xs"></i> Call Our Clinic
                         </a>
                     </div>
@@ -573,7 +573,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-10 pt-4">
                 <div class="lg:col-span-4">
                     <div class="mb-6">
-                        <a href="index.html" class="brand-font text-2xl lg:text-3xl font-bold tracking-tight" style="color: #000000; text-decoration: none;">QiBalance</a>
+                        <a href="index.html" class="brand-font text-2xl lg:text-3xl font-semibold tracking-tight" style="color: var(--text-main); text-decoration: none;">QiBalance</a>
                     </div>
                     <p class="opacity-80 leading-relaxed text-sm mb-6 max-w-sm" style="color: var(--text-muted);">
                         A sanctuary for holistic healing. We combine ancient Traditional Chinese Medicine practices with modern care to help you achieve optimal physical and mental harmony.
