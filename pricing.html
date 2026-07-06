@@ -209,14 +209,15 @@
             </div>
 
             <div class="hidden xl:flex items-center justify-end flex-1 w-full gap-2">
-                <a href="login.html" class="btn btn-outline min-w-[95px] h-[38px] !p-0 !text-[11px] flex items-center justify-center">Login</a> 
-                <a href="register.html" class="btn btn-solid min-w-[95px] h-[38px] !p-0 !text-[11px] flex items-center justify-center">Register</a>
-                
                 <div id="theme-toggle-desktop" class="theme-toggle-pill" title="Toggle Dark Mode">
                     <i class="fas fa-sun"></i><i class="fas fa-moon"></i><div class="thumb"></div>
                 </div>
 
                 <button id="rtl-btn" class="text-[9px] font-black text-[var(--text-muted)] hover:text-[var(--text-main)] hover:bg-[var(--bg-secondary)] transition-all uppercase tracking-widest border border-[var(--border-color)] px-2.5 py-1.5 rounded">RTL</button>
+
+                <!-- Added ms-2 (margin-start) here to give a slight visual separation between toggles and buttons -->
+                <a href="login.html" class="btn btn-outline min-w-[95px] h-[38px] !p-0 !text-[11px] flex items-center justify-center ms-2">Login</a> 
+                <a href="register.html" class="btn btn-solid min-w-[95px] h-[38px] !p-0 !text-[11px] flex items-center justify-center">Register</a>
             </div>
 
             <div class="xl:hidden flex items-center justify-end flex-1 w-full">
@@ -376,7 +377,8 @@
                 </div>
 
                 <!-- Pricing Card 2 (Highlighted) -->
-                <div class="flex flex-col bg-[var(--accent-dark)] rounded-2xl border border-[var(--accent-color)] p-8 shadow-2xl hover:-translate-y-2 transition-all duration-300 h-full relative overflow-hidden">
+                <!-- Replaced CSS variables with hardcoded dark hex colors to maintain contrast in dark mode -->
+                <div class="flex flex-col bg-[#6B705C] rounded-2xl border border-[#414833] p-8 shadow-2xl hover:-translate-y-2 transition-all duration-300 h-full relative overflow-hidden">
                     
                     <div class="text-center mb-8 border-b border-white/20 pb-8">
                         <h3 class="text-xl font-semibold brand-font text-white mb-2">Healing Package</h3>
@@ -406,7 +408,8 @@
                         </li>
                     </ul>
                     <!-- mt-auto anchors the button to the absolute bottom of the card -->
-                    <a href="contact.html" class="btn w-full !py-3 rounded-lg mt-auto bg-[var(--accent-color)] text-white hover:bg-white hover:text-[var(--text-main)] border border-transparent transition-colors shadow-lg">Purchase Package</a>
+                    <!-- Fixed button background/text colors to ensure readability and contrast -->
+                    <a href="contact.html" class="btn w-full !py-3 rounded-lg mt-auto bg-[#414833] text-white hover:bg-white hover:text-[#414833] border border-transparent transition-colors shadow-lg">Purchase Package</a>
                 </div>
 
                 <!-- Pricing Card 3 -->
